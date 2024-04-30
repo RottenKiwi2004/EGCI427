@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Date Time</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Time</title>
 </head>
 <body>
-
-		<script>
-				let str = "Today : "
-				let d = new Date();
-				str += ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][d.getDay()] + " ";
-				str += `${d.getDate()} `;
-				str += ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][d.getMonth()] + ", ";
-				str += `${d.getFullYear()} `;
-				let h = d.getHours();
-				let m = d.getMinutes();
-				let s = d.getSeconds();
-				str += `${h < 10 ? '0' : ''}${h}:`;
-				str += `${m < 10 ? '0' : ''}${m}:`;
-				str += `${s < 10 ? '0' : ''}${s}`;
-				document.write(str);
-		</script>
+    
+    <script>
+        let str = "Today : "
+        let d = new Date();
+        str += ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][d.getDay()] + " ";
+        str += `${d.getDate()} `;
+        str += ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][d.getMonth()] + ", ";
+        str += `${d.getFullYear()} `;
+        let h = d.getHours();
+        let m = d.getMinutes();
+        let s = d.getSeconds();
+        str += `${((h - 1) % 12 + 1) < 10 ? '0' : ''}${((h - 1) % 12 + 1)}:`;
+        str += `${m < 10 ? '0' : ''}${m}:`;
+        str += `${s < 10 ? '0' : ''}${s} `;
+        str += h % 12 == h ? 'AM' : 'PM'
+        document.write(str);
+    </script>
 </body>
 </html>
