@@ -1,0 +1,21 @@
+//------------------------------------------------//
+//Practice
+  // Collection: students
+// id      firstname       lastname        age     major
+// 1       Bob             Cat             21      Math
+// 2       Tom             Cat             18      Science
+// 3       Marry           Lamb            19      Social Study
+// 4       Linda           Lamb            21      IT
+// ------------------------------------------------------------------
+// 1) Find students who are in the major "Science"
+// 2) Find students that their age < 20 and sort by descending
+// 3) Update the lastname of students "Lamb" to be "Fox"
+// 4) Insert new student {id: 5, firstname: "Adam", lastname: "Zoo", age: 22, major: "Math"}
+
+
+// Output shows the JSON data on the web browser by calling the URL.
+// Example 
+// 1) http://localhost:8081/showMajor/Science
+// 2) http://localhost:8081/showAgeless/20
+// 3) POST/PUT http://localhost:8081/updateLastname
+// 4) http://localhost:8081/insertStudent
