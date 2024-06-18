@@ -35,9 +35,9 @@
                         <router-link :to="{ path: 'userupdate', name: 'UpdateUser', params:{userId: user_alias._id} }">
                           <button class="btn btn-xs btn-warning">Edit</button>&nbsp;
                         </router-link>   
-                        <router-link to="/users">
+                        <!-- <router-link to="/users">
                           <button class="btn btn-xs btn-danger" data-toggle="modal" data-target=".bd-example-modal-sm" @click="DELETE(user_alias._id)"><span class="glyphicon glyphicon-trash">Delete</span></button>
-                        </router-link>
+                        </router-link> -->
                     </td>
                 </tr>
             </tbody>
@@ -77,6 +77,9 @@ import axios from 'axios'
                 Users: {}
             }
         },
+        methods() {
+          
+        },
         mounted() {
             axios.get('http://127.0.0.1:3427/users')
             .then(res=>{
@@ -84,5 +87,12 @@ import axios from 'axios'
                 console.log(res.data);
             })
         },
+        computed: {
+          filterUsers: function() {
+            return this.Users.filter(u=>{
+              return u.firstName.match(this.search)
+            })
+          }
+        }
     }
 </script>
